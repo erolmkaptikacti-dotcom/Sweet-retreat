@@ -5,11 +5,12 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Menu — Sweet Retreat</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
-<link href="https://fonts.googleapis.com/css2?family=Josefin+Serif:ital,wght@0,400;0,700;1,400&family=Lora:ital,wght@0,300;0,400;1,300&family=Raleway:wght@300;400;500&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Josefin+Serif:ital,wght@0,400;0,700;1,400&family=Lora:ital,wght@0,300;0,400;1,300&family=Raleway:wght@300;400;500;600&display=swap" rel="stylesheet">
 <style>
   :root {
     --rose: #e8a0b4;
     --deep-rose: #c4607a;
+    --blush: #f5d0dc;
     --cream: #fdf6f0;
     --dark: #1a1015;
     --charcoal: #2d2028;
@@ -20,11 +21,12 @@
 
   body {
     font-family: 'Raleway', sans-serif;
-    background: var(--dark);
-    color: var(--cream);
+    background: #fff;
+    color: var(--dark);
     overflow-x: hidden;
   }
 
+  /* ── NAV ── */
   nav {
     position: fixed; top: 0; left: 0; right: 0; z-index: 100;
     display: flex; align-items: center; justify-content: space-between;
@@ -32,21 +34,18 @@
     background: rgba(26,16,21,0.97);
     backdrop-filter: blur(2px);
   }
-
   .nav-logo {
     font-family: 'Josefin Serif', serif;
     font-size: 1.6rem; letter-spacing: 0.02em;
     color: var(--cream); text-decoration: none;
   }
   .nav-logo span { color: var(--rose); font-style: italic; }
-
   .nav-links { display: flex; gap: 2.5rem; list-style: none; }
   .nav-links a {
     font-size: 0.82rem; letter-spacing: 0.12em; text-transform: uppercase;
     color: rgba(255,255,255,0.75); text-decoration: none; transition: color 0.3s;
   }
   .nav-links a:hover, .nav-links a.active { color: var(--rose); }
-
   .nav-cta {
     background: var(--deep-rose); color: white;
     padding: 0.65rem 1.6rem; border-radius: 2px;
@@ -55,55 +54,164 @@
   }
   .nav-cta:hover { background: var(--rose); }
 
+  /* ── MENU HEADER ── */
   .menu-header {
-    padding: 10rem 4rem 4rem;
+    background: var(--dark);
+    padding: 10rem 4rem 5rem;
     text-align: center;
   }
-
   .menu-eyebrow {
-    font-size: 0.72rem; letter-spacing: 0.28em; text-transform: uppercase;
+    font-size: 0.72rem; letter-spacing: 0.3em; text-transform: uppercase;
     color: var(--rose); margin-bottom: 1.2rem;
   }
-
   .menu-title {
     font-family: 'Josefin Serif', serif;
-    font-size: clamp(3rem, 7vw, 5.5rem);
-    color: var(--cream); line-height: 1.05;
+    font-size: clamp(3.5rem, 8vw, 6rem);
+    color: var(--cream); line-height: 1.02;
   }
   .menu-title em { color: var(--rose); font-style: italic; }
-
   .menu-divider {
     width: 60px; height: 1px;
-    background: var(--rose);
-    margin: 2rem auto 0;
+    background: var(--rose); margin: 2rem auto;
+  }
+  .menu-tagline {
+    font-family: 'Lora', serif;
+    font-size: 1.1rem; color: rgba(255,255,255,0.55);
   }
 
-  .menu-boards {
-    display: flex; flex-direction: column; gap: 4rem;
-    max-width: 1100px; margin: 0 auto;
-    padding: 4rem 4rem 8rem;
+  /* ── MENU BODY ── */
+  .menu-body { max-width: 1100px; margin: 0 auto; padding: 0 4rem 8rem; }
+
+  /* ── CATEGORY BLOCK ── */
+  .menu-category {
+    padding: 5rem 0 3rem;
+    border-bottom: 1px solid #f0e8ec;
+  }
+  .menu-category:last-child { border-bottom: none; }
+
+  .category-header {
+    display: flex; align-items: baseline; gap: 1.5rem;
+    margin-bottom: 0.5rem;
+  }
+  .category-name {
+    font-family: 'Josefin Serif', serif;
+    font-size: clamp(1.8rem, 4vw, 2.8rem);
+    color: var(--dark); letter-spacing: -0.01em;
+  }
+  .category-price {
+    font-family: 'Josefin Serif', serif;
+    font-size: 1.3rem; color: var(--deep-rose);
+  }
+  .category-note {
+    font-size: 0.8rem; color: #888; font-style: italic;
+    margin-bottom: 2.5rem; margin-top: 0.4rem;
   }
 
-  .menu-board {
-    position: relative;
+  /* ── ITEM GRID ── */
+  .item-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    gap: 0;
+  }
+  .menu-item {
+    padding: 1.6rem 2rem 1.6rem 0;
+    border-bottom: 1px solid #f5eff2;
+  }
+  .menu-item:last-child { border-bottom: none; }
+
+  .item-name {
+    font-family: 'Josefin Serif', serif;
+    font-size: 1.05rem; color: var(--dark);
+    margin-bottom: 0.35rem; letter-spacing: 0.01em;
+  }
+  .item-desc {
+    font-size: 0.82rem; color: #888; line-height: 1.6;
+  }
+  .item-price {
+    display: inline-block; margin-top: 0.5rem;
+    font-size: 0.85rem; font-weight: 600;
+    color: var(--deep-rose);
   }
 
-  .menu-board img {
-    width: 100%; display: block;
-    border-radius: 4px;
-    box-shadow: 0 12px 60px rgba(0,0,0,0.5);
+  /* Single column list (for drinks) */
+  .item-list { list-style: none; }
+  .item-list li {
+    padding: 0.7rem 0;
+    border-bottom: 1px solid #f5eff2;
+    font-size: 0.9rem; color: #444;
+    display: flex; justify-content: space-between; align-items: baseline;
+  }
+  .item-list li:last-child { border-bottom: none; }
+  .item-list .sub { font-size: 0.78rem; color: #aaa; margin-left: 0.5rem; }
+
+  /* ── DRINK COLUMNS ── */
+  .drink-columns {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    gap: 3rem;
+  }
+  .drink-col-title {
+    font-family: 'Josefin Serif', serif;
+    font-size: 1.15rem; color: var(--dark);
+    padding-bottom: 0.6rem;
+    border-bottom: 2px solid var(--rose);
+    margin-bottom: 1rem;
+    display: flex; justify-content: space-between; align-items: baseline;
+  }
+  .drink-col-price { font-size: 0.9rem; color: var(--deep-rose); }
+  .drink-subitem {
+    padding: 0.45rem 0;
+    font-size: 0.88rem; color: #555;
+    border-bottom: 1px solid #f5eff2;
+  }
+  .drink-subitem:last-child { border-bottom: none; }
+  .drink-subitem .flavor { color: #999; font-size: 0.78rem; margin-top: 0.1rem; }
+
+  /* ── ADDON STRIP ── */
+  .addon-strip {
+    margin-top: 4rem;
+    background: var(--dark); border-radius: 4px;
+    padding: 2.5rem 3rem;
+    display: flex; flex-wrap: wrap; align-items: center; gap: 2rem;
+  }
+  .addon-strip-title {
+    font-family: 'Josefin Serif', serif;
+    font-size: 1.1rem; color: var(--cream);
+    letter-spacing: 0.05em; text-transform: uppercase;
+    flex-basis: 100%; margin-bottom: 0.5rem;
+  }
+  .addon-chip {
+    background: rgba(255,255,255,0.07);
+    border: 1px solid rgba(232,160,180,0.3);
+    border-radius: 2px; padding: 0.6rem 1.4rem;
+    font-size: 0.85rem; color: var(--cream);
+    display: flex; gap: 0.8rem; align-items: center;
+  }
+  .addon-chip span { color: var(--rose); font-weight: 600; }
+
+  /* ── OPTIONAL NOTE ── */
+  .optional-note {
+    margin-top: 1.5rem;
+    font-size: 0.82rem; color: #888;
+    font-style: italic; border-left: 2px solid var(--rose);
+    padding-left: 1rem;
   }
 
-  .menu-board-label {
-    font-size: 0.7rem; letter-spacing: 0.25em; text-transform: uppercase;
-    color: var(--rose); margin-bottom: 1rem;
+  /* ── SECTION DIVIDER LABEL ── */
+  .section-label-bar {
+    background: var(--blush); padding: 1rem 4rem;
+    font-size: 0.7rem; letter-spacing: 0.3em; text-transform: uppercase;
+    color: var(--deep-rose); text-align: center;
   }
 
-  @media (max-width: 768px) {
+  @media (max-width: 900px) {
     nav { padding: 1.2rem 2rem; }
     .nav-links { display: none; }
-    .menu-header { padding: 8rem 2rem 3rem; }
-    .menu-boards { padding: 3rem 1.5rem 5rem; gap: 3rem; }
+    .menu-header { padding: 8rem 2rem 4rem; }
+    .menu-body { padding: 0 1.5rem 5rem; }
+    .drink-columns { grid-template-columns: 1fr; gap: 2rem; }
+    .item-grid { grid-template-columns: 1fr; }
+    .addon-strip { padding: 2rem 1.5rem; }
   }
 </style>
 </head>
@@ -112,7 +220,7 @@
 <nav>
   <a href="index.html" class="nav-logo">Sweet <span>Retreat</span></a>
   <ul class="nav-links">
-    <li><a href="index.html#about">Our Story</a></li>
+    <li><a href="index.html">Home</a></li>
     <li><a href="menu.html" class="active">Menu</a></li>
     <li><a href="index.html#reviews">Reviews</a></li>
     <li><a href="index.html#visit">Visit</a></li>
@@ -120,26 +228,212 @@
   <a href="index.html#visit" class="nav-cta">Find Us</a>
 </nav>
 
+<!-- HEADER -->
 <div class="menu-header">
   <p class="menu-eyebrow">Sweet Retreat Rochester</p>
   <h1 class="menu-title">Our <em>Menu</em></h1>
   <div class="menu-divider"></div>
+  <p class="menu-tagline">Everything made fresh, every single time.</p>
 </div>
 
-<div class="menu-boards">
-  <div class="menu-board">
-    <p class="menu-board-label">Favorites</p>
-    <img src="menu-favorites.png" alt="Sweet Retreat's Favorites">
+<div class="section-label-bar">Favorites &nbsp;·&nbsp; Crepes &nbsp;·&nbsp; Waffles &nbsp;·&nbsp; Drinks</div>
+
+<div class="menu-body">
+
+  <!-- FAVORITES -->
+  <div class="menu-category">
+    <div class="category-header">
+      <h2 class="category-name">Sweet Retreat's Favorites</h2>
+    </div>
+
+    <div class="item-grid">
+      <div class="menu-item">
+        <div class="item-name">Dubai Strawberries</div>
+        <div class="item-desc">Fresh strawberries, Belgian milk and white chocolate, crunchy pistachio kunafa.</div>
+        <div class="item-price">12oz — $15.99 &nbsp;|&nbsp; 16oz — $20.99</div>
+      </div>
+      <div class="menu-item">
+        <div class="item-name">Dubai Chocolate Bars</div>
+        <div class="item-desc">Crunchy pistachio kunafa, Belgian milk chocolate.</div>
+        <div class="item-price">$10.99</div>
+      </div>
+    </div>
+
+    <p class="optional-note">*Optional Biscoff Kunafa upon request for Strawberry Cup*</p>
   </div>
-  <div class="menu-board">
-    <p class="menu-board-label">Drinks</p>
-    <img src="menu-drinks.png" alt="Drink Menu">
+
+  <!-- CREPES -->
+  <div class="menu-category">
+    <div class="category-header">
+      <h2 class="category-name">Crepes</h2>
+      <span class="category-price">$17</span>
+    </div>
+    <p class="category-note">Handmade fresh to order — each one a little different, always worth it.</p>
+
+    <div class="item-grid">
+      <div class="menu-item">
+        <div class="item-name">Straw-Nana Nutella</div>
+      </div>
+      <div class="menu-item">
+        <div class="item-name">Nutella Dream</div>
+        <div class="item-desc">Nutella and white chocolate sauce topped with seasonal fruits.</div>
+      </div>
+      <div class="menu-item">
+        <div class="item-name">Biscoff Bliss</div>
+        <div class="item-desc">Biscoff sauce and white chocolate topped with lotus crumble.</div>
+      </div>
+      <div class="menu-item">
+        <div class="item-name">Pistachio Paradise</div>
+        <div class="item-desc">Pistachio sauce, white chocolate, garnished with chopped pistachio.</div>
+      </div>
+      <div class="menu-item">
+        <div class="item-name">Campfire Crepe</div>
+        <div class="item-desc">Milk and white chocolate, housemade cream cheese filling, powdered sugar & fresh seasonal fruits.</div>
+      </div>
+      <div class="menu-item">
+        <div class="item-name">Cookies N' Cream</div>
+        <div class="item-desc">Oreo spread & dark chocolate garnished with crushed Oreos.</div>
+      </div>
+      <div class="menu-item">
+        <div class="item-name">The Sweet Retreat</div>
+        <div class="item-desc">Cream cheese filling, strawberry jam, white chocolate, fresh strawberries. Optional lemon zest.</div>
+      </div>
+      <div class="menu-item">
+        <div class="item-name">Reese Peanut Butter</div>
+        <div class="item-desc">Creamy peanut butter topped with milk chocolate and Reese's crumbs.</div>
+      </div>
+      <div class="menu-item">
+        <div class="item-name">Dubai Delight</div>
+        <div class="item-desc">Crunchy pistachio kunafa filling, pistachio sauce, Belgian milk and white chocolate, garnished with pistachios.</div>
+        <div class="item-price">$18.75</div>
+      </div>
+    </div>
   </div>
-  <div class="menu-board">
-    <p class="menu-board-label">Crepes, Waffles & More</p>
-    <img src="menu-food.png" alt="Full Food Menu">
+
+  <!-- BUBBLE WAFFLES -->
+  <div class="menu-category">
+    <div class="category-header">
+      <h2 class="category-name">Bubble Waffles</h2>
+      <span class="category-price">$10</span>
+    </div>
+
+    <div class="item-grid">
+      <div class="menu-item">
+        <div class="item-name">Biscoff Bliss</div>
+        <div class="item-desc">Biscoff sauce and white chocolate, finished with lotus crumble.</div>
+      </div>
+      <div class="menu-item">
+        <div class="item-name">S'mores</div>
+        <div class="item-desc">Milk and white chocolate, dressed with graham crackers and toasted marshmallows.</div>
+      </div>
+      <div class="menu-item">
+        <div class="item-name">Pistachio Paradise</div>
+        <div class="item-desc">Pistachio sauce, white chocolate, garnished with chopped pistachio.</div>
+      </div>
+      <div class="menu-item">
+        <div class="item-name">Nutella Dream</div>
+        <div class="item-desc">Nutella and white chocolate sauce.</div>
+      </div>
+      <div class="menu-item">
+        <div class="item-name">Cookies N' Cream</div>
+        <div class="item-desc">Cookies & cream spread and crushed Oreos.</div>
+      </div>
+      <div class="menu-item">
+        <div class="item-name">Kinder Lovers</div>
+        <div class="item-desc">Hazelnut, white and dark chocolate sauce topped with Kinder chocolates.</div>
+      </div>
+      <div class="menu-item">
+        <div class="item-name">Dubai Chocolate Waffle</div>
+        <div class="item-price">$14.99</div>
+      </div>
+    </div>
   </div>
-</div>
+
+  <!-- BUBBLE WANDS -->
+  <div class="menu-category">
+    <div class="category-header">
+      <h2 class="category-name">Bubble Wands</h2>
+      <span class="category-price">$7 &nbsp;|&nbsp; $12 &nbsp;|&nbsp; $18</span>
+    </div>
+  </div>
+
+  <!-- DRINKS -->
+  <div class="menu-category">
+    <h2 class="category-name" style="margin-bottom: 3rem;">Drinks</h2>
+
+    <div class="drink-columns">
+
+      <!-- LEFT -->
+      <div>
+        <div class="drink-col-title">
+          Refreshers <span class="drink-col-price">$4.50</span>
+        </div>
+        <div class="drink-subitem">Watermelon Mint</div>
+        <div class="drink-subitem">Strawberry</div>
+        <div class="drink-subitem">Blue Raspberry</div>
+        <div class="drink-subitem">Guava & Passion Fruit</div>
+        <div class="drink-subitem">Dragon Fruit</div>
+        <div class="drink-subitem" style="color:#aaa; font-size:0.76rem; font-style:italic;">**Lemonade or Sparkling Water**</div>
+
+        <div class="drink-col-title" style="margin-top: 2rem;">
+          Smoothies <span class="drink-col-price">$6.99</span>
+        </div>
+        <div class="drink-subitem">Strawberry Banana</div>
+        <div class="drink-subitem">Pina Colada</div>
+        <div class="drink-subitem">Mango</div>
+        <div class="drink-subitem">Lemonade Mint</div>
+        <div class="drink-subitem">Mango Dragon Fruit</div>
+      </div>
+
+      <!-- MIDDLE -->
+      <div>
+        <div class="drink-col-title">
+          Frappuccino <span class="drink-col-price">$6.99</span>
+        </div>
+        <div class="drink-subitem">Pistachio</div>
+        <div class="drink-subitem">Biscoff</div>
+        <div class="drink-subitem">Cookies N' Cream</div>
+        <div class="drink-subitem">Caramel Vanilla White</div>
+        <div class="drink-subitem">Chocolate Mocha</div>
+        <div class="drink-subitem" style="color:#aaa; font-size:0.76rem; font-style:italic;">**Optional Whipped Cream**</div>
+
+        <div class="drink-col-title" style="margin-top: 2rem;">Coffee & Tea</div>
+        <div class="drink-subitem">Hot Latte / Cappuccino <span style="color:var(--deep-rose); float:right;">$5.99</span></div>
+        <div class="drink-subitem">Iced Latte <span style="color:var(--deep-rose); float:right;">$6.50</span>
+          <div class="flavor">Caramel · Vanilla · White Mocha · Biscoff · Pistachio</div>
+        </div>
+        <div class="drink-subitem">Turkish Coffee <span style="color:var(--deep-rose); float:right;">$4.50</span></div>
+        <div class="drink-subitem">Hot Tea <span style="color:var(--deep-rose); float:right;">$3.00</span></div>
+        <div class="drink-subitem">House Blend Coffee <span style="color:var(--deep-rose); float:right;">$3.50</span></div>
+      </div>
+
+      <!-- RIGHT -->
+      <div>
+        <div class="drink-col-title">
+          Mojitos <span class="drink-col-price">$6.75</span>
+        </div>
+        <div class="drink-subitem">Strawberry Fields <div class="flavor">Strawberry</div></div>
+        <div class="drink-subitem">Blue Ocean <div class="flavor">Blue Raspberry</div></div>
+        <div class="drink-subitem">Dragon Breeze <div class="flavor">Dragon Fruit</div></div>
+        <div class="drink-subitem">Mint to Be <div class="flavor">Watermelon Mint</div></div>
+        <div class="drink-subitem">Passion Splash <div class="flavor">Passion Fruit</div></div>
+        <div class="drink-subitem">Tropic Trio <div class="flavor">Mango Pineapple Guava</div></div>
+        <div class="drink-subitem" style="color:#aaa; font-size:0.76rem; font-style:italic; margin-top:0.5rem;">**Sprite | Red Bull | Sparkling Water**</div>
+      </div>
+
+    </div>
+  </div>
+
+  <!-- ADD ONS -->
+  <div class="addon-strip">
+    <div class="addon-strip-title">Add Ons</div>
+    <div class="addon-chip">Ice Cream <span>$3.00</span></div>
+    <div class="addon-chip">Berries <span>$3.00</span></div>
+    <div class="addon-chip">Whipped Cream <span>$0.50</span></div>
+    <div class="addon-chip">Additional Sauces <span>$2.00</span></div>
+  </div>
+
+</div><!-- end menu-body -->
 
 </body>
 </html>
