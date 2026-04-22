@@ -157,23 +157,6 @@
     100% { transform: scaleY(1); opacity: 0; }
   }
 
-  /* ── TAGLINE STRIP ── */
-  .strip {
-    background: var(--deep-rose);
-    padding: 1.1rem 0; overflow: hidden;
-  }
-  .strip-inner {
-    display: flex; gap: 3rem;
-    animation: marquee 22s linear infinite;
-    white-space: nowrap;
-  }
-  @keyframes marquee { from { transform: translateX(0); } to { transform: translateX(-50%); } }
-  .strip-item {
-    font-size: 0.75rem; letter-spacing: 0.2em; text-transform: uppercase;
-    color: rgba(255,255,255,0.9); flex-shrink: 0;
-  }
-  .strip-dot { color: rgba(255,255,255,0.5); }
-
   /* ── ABOUT ── */
   .photo-lineup {
     display: grid; grid-template-columns: 1fr 1fr 1fr;
@@ -419,35 +402,6 @@
 </section>
 
 <!-- MARQUEE STRIP -->
-<div class="strip">
-  <div class="strip-inner">
-    <span class="strip-item">Dubai Chocolate</span>
-    <span class="strip-dot">✦</span>
-    <span class="strip-item">Bubble Waffles</span>
-    <span class="strip-dot">✦</span>
-    <span class="strip-item">Artisan Crepes</span>
-    <span class="strip-dot">✦</span>
-    <span class="strip-item">Handcrafted Shakes</span>
-    <span class="strip-dot">✦</span>
-    <span class="strip-item">Premium Coffee</span>
-    <span class="strip-dot">✦</span>
-    <span class="strip-item">Fresh Cheesecake</span>
-    <span class="strip-dot">✦</span>
-    <span class="strip-item">Dubai Chocolate</span>
-    <span class="strip-dot">✦</span>
-    <span class="strip-item">Bubble Waffles</span>
-    <span class="strip-dot">✦</span>
-    <span class="strip-item">Artisan Crepes</span>
-    <span class="strip-dot">✦</span>
-    <span class="strip-item">Handcrafted Shakes</span>
-    <span class="strip-dot">✦</span>
-    <span class="strip-item">Premium Coffee</span>
-    <span class="strip-dot">✦</span>
-    <span class="strip-item">Fresh Cheesecake</span>
-    <span class="strip-dot">✦</span>
-  </div>
-</div>
-
 <!-- PHOTO LINEUP -->
 <section class="photo-lineup" id="about">
   <div>
