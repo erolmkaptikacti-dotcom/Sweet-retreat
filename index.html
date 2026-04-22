@@ -187,6 +187,44 @@
     color: var(--rose); margin-bottom: 1.5rem;
   }
 
+  /* ── SHOWCASE ── */
+  .showcase {
+    display: grid; grid-template-columns: 1fr 1.5fr;
+    background: #fff; align-items: center; min-height: 600px;
+  }
+  .showcase-text {
+    padding: 5rem 4rem;
+    display: flex; flex-direction: column; justify-content: center;
+  }
+  .showcase-text .section-label { color: var(--deep-rose); }
+  .showcase-title {
+    font-family: 'Josefin Serif', serif;
+    font-size: clamp(2rem, 3.5vw, 3rem);
+    color: var(--dark); line-height: 1.15; margin-bottom: 2.5rem;
+  }
+  .showcase-title em { font-style: italic; color: var(--deep-rose); }
+  .showcase-btn {
+    display: inline-block;
+    border: 1.5px solid var(--dark); color: var(--dark);
+    padding: 0.9rem 2.2rem; align-self: flex-start;
+    font-size: 0.75rem; letter-spacing: 0.18em; text-transform: uppercase;
+    text-decoration: none; transition: background 0.3s, color 0.3s;
+  }
+  .showcase-btn:hover { background: var(--dark); color: #fff; }
+  .showcase-photos {
+    display: flex; flex-direction: column; gap: 4px;
+    padding: 2rem 2rem 2rem 0;
+  }
+  .showcase-main img {
+    width: 100%; height: 340px; object-fit: cover; display: block;
+  }
+  .showcase-row {
+    display: grid; grid-template-columns: 1fr 1fr; gap: 4px;
+  }
+  .showcase-row img {
+    width: 100%; height: 220px; object-fit: cover; display: block;
+  }
+
   /* ── SPECIALTIES ── */
   .specialties {
     background: var(--dark); padding: 7rem 4rem;
@@ -375,6 +413,10 @@
     .nav-links { display: none; }
     .photo-lineup { grid-template-columns: 1fr; height: auto; }
     .photo-lineup img { height: 55vw; min-height: 250px; }
+    .showcase { grid-template-columns: 1fr; }
+    .showcase-photos { padding: 0 1.5rem 2rem; }
+    .showcase-main img { height: 50vw; }
+    .showcase-row img { height: 35vw; }
     .exp-grid { grid-template-columns: 1fr 1fr; }
     .footer-top { grid-template-columns: 1fr 1fr; }
     .specialties, .reviews, .experience, .cta-banner { padding: 5rem 2rem; }
@@ -446,6 +488,24 @@
   <img src="Screenshot%202026-04-22%20010439.png" alt="Sweet Retreat interior">
   <img src="Screenshot%202026-04-22%20011017.png" alt="Sweet Retreat desserts">
   <img src="Screenshot%202026-04-22%20011217.png" alt="Sweet Retreat experience">
+</section>
+
+<!-- SHOWCASE -->
+<section class="showcase">
+  <div class="showcase-text">
+    <p class="section-label">Our Retreat</p>
+    <h2 class="showcase-title">A place worth <em>savoring,</em><br>every visit</h2>
+    <a href="#menu" class="showcase-btn">Explore the Menu</a>
+  </div>
+  <div class="showcase-photos">
+    <div class="showcase-main">
+      <img src="Screenshot%202026-04-22%20012137.png" alt="Sweet Retreat setting">
+    </div>
+    <div class="showcase-row">
+      <img src="Screenshot%202026-04-22%20011930.png" alt="Sweet Retreat">
+      <img src="Screenshot%202026-04-22%20012059.png" alt="Sweet Retreat cake">
+    </div>
+  </div>
 </section>
 
 <!-- SPECIALTIES -->
