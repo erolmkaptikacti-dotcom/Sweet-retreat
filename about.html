@@ -63,7 +63,7 @@
   .about-hero-bg {
     position: absolute; inset: 0;
     background-image: url('Screenshot%202026-04-22%20020433.png');
-    background-size: cover; background-position: center;
+    background-size: cover; background-position: center 70%;
     filter: brightness(0.45) saturate(0.8);
   }
   .about-hero-overlay {
@@ -113,78 +113,41 @@
     background: var(--rose); margin: 0 auto 3rem;
   }
 
-  /* ── PHOTO STRIP ── */
-  .about-photo-strip {
-    display: grid; grid-template-columns: 1fr 1fr 1fr;
-    gap: 3px;
+  /* ── ALTERNATING FEATURE ROWS ── */
+  .about-features {
+    background: #fff;
+    padding: 5rem 4rem;
   }
-  .about-photo-strip img {
-    width: 100%; height: 380px; object-fit: cover; display: block;
-    filter: saturate(0.85);
-    transition: filter 0.4s;
+  .about-feature {
+    display: grid; grid-template-columns: 1fr 1fr;
+    gap: 5rem; align-items: center;
+    max-width: 900px; margin: 0 auto;
+    padding: 4rem 0;
+    border-bottom: 1px solid #f0ece8;
   }
-  .about-photo-strip img:hover { filter: saturate(1.1); }
-
-  /* ── VALUES ── */
-  .about-values {
-    background: var(--charcoal);
-    padding: 7rem 4rem;
-    text-align: center;
+  .about-feature:last-child { border-bottom: none; }
+  .about-feature.reverse { direction: rtl; }
+  .about-feature.reverse > * { direction: ltr; }
+  .about-feature img {
+    width: 100%; display: block;
+    object-fit: cover; aspect-ratio: 4/3;
   }
-  .values-label {
-    font-size: 0.7rem; letter-spacing: 0.3em; text-transform: uppercase;
-    color: var(--rose); margin-bottom: 1rem;
+  .feature-text {
+    display: flex; flex-direction: column; align-items: flex-start; gap: 1.5rem;
   }
-  .values-title {
-    font-family: 'Josefin Serif', serif;
-    font-size: clamp(1.8rem, 4vw, 2.8rem);
-    color: var(--cream); margin-bottom: 4rem;
-  }
-  .values-title em { font-style: italic; color: var(--rose); }
-  .values-grid {
-    display: grid; grid-template-columns: repeat(3, 1fr);
-    gap: 2.5rem; max-width: 1000px; margin: 0 auto;
-  }
-  .value-card {
-    padding: 2.5rem 2rem;
-    border: 1px solid rgba(232,160,180,0.15);
-    border-radius: 4px;
-    text-align: left;
-  }
-  .value-icon {
-    font-size: 1.8rem; margin-bottom: 1.2rem;
-  }
-  .value-name {
-    font-family: 'Josefin Serif', serif;
-    font-size: 1.15rem; color: var(--cream);
-    margin-bottom: 0.7rem;
-  }
-  .value-desc {
-    font-size: 0.88rem; line-height: 1.7;
-    color: rgba(255,255,255,0.5);
-  }
-
-  /* ── STORY SECTION ── */
-  .about-story {
-    max-width: 780px; margin: 0 auto;
-    padding: 7rem 4rem;
-  }
-  .story-label {
-    font-size: 0.7rem; letter-spacing: 0.3em; text-transform: uppercase;
-    color: var(--rose); margin-bottom: 1.5rem;
-  }
-  .story-title {
-    font-family: 'Josefin Serif', serif;
-    font-size: clamp(1.8rem, 4vw, 2.8rem);
-    color: var(--cream); line-height: 1.2; margin-bottom: 2rem;
-  }
-  .story-title em { font-style: italic; color: var(--rose); }
-  .story-body {
+  .feature-body {
     font-family: 'Lora', serif;
-    font-size: 1.1rem; line-height: 1.95;
-    color: rgba(255,255,255,0.65);
+    font-size: 1rem; line-height: 1.85;
+    color: #444; text-align: left;
   }
-  .story-body p + p { margin-top: 1.5rem; }
+  .feature-btn {
+    display: inline-block;
+    background: var(--dark); color: #fff;
+    padding: 0.8rem 2rem;
+    font-size: 0.72rem; letter-spacing: 0.16em; text-transform: uppercase;
+    text-decoration: none; transition: background 0.3s;
+  }
+  .feature-btn:hover { background: var(--deep-rose); }
 
   /* ── STATS ── */
   .about-stats {
@@ -240,11 +203,10 @@
   @media (max-width: 900px) {
     nav { padding: 1.2rem 2rem; }
     .nav-links { display: none; }
-    .about-intro, .about-story { padding: 4rem 1.5rem; }
-    .about-photo-strip { grid-template-columns: 1fr; }
-    .about-photo-strip img { height: 60vw; }
-    .values-grid { grid-template-columns: 1fr; }
-    .about-values { padding: 5rem 2rem; }
+    .about-intro { padding: 4rem 1.5rem; }
+    .about-features { padding: 3rem 1.5rem; }
+    .about-feature { grid-template-columns: 1fr; gap: 2rem; direction: ltr; }
+    .about-feature.reverse { direction: ltr; }
     .about-stats { gap: 3rem; padding: 4rem 2rem; }
     .about-cta { padding: 5rem 2rem; }
   }
@@ -283,45 +245,36 @@
   </p>
 </div>
 
-<!-- PHOTO STRIP -->
-<div class="about-photo-strip">
-  <img src="Screenshot%202026-04-22%20010439.png" alt="Sweet Retreat food">
-  <img src="Screenshot%202026-04-22%20011017.png" alt="Sweet Retreat desserts">
-  <img src="Screenshot%202026-04-22%20011217.png" alt="Sweet Retreat drinks">
-</div>
+<!-- ALTERNATING FEATURE ROWS -->
+<div class="about-features">
 
-<!-- STORY -->
-<div class="about-story">
-  <p class="story-label">Our Story</p>
-  <h2 class="story-title">Built on passion, <em>crafted</em> with care</h2>
-  <div class="story-body">
-    <p>Sweet Retreat was born from a simple belief: Rochester deserved something extraordinary. We set out to create a space where every detail matters — from the ingredients we source to the way we welcome every guest who walks in.</p>
-    <p>Every item on our menu is made fresh to order. We don't cut corners. Whether it's our Dubai Strawberry Cups piled high with fresh fruit and pistachio kunafa, our golden bubble waffles, or our handcrafted artisan crepes, everything is prepared with the same love and attention every single time.</p>
-    <p>Our team is what makes Sweet Retreat truly special. We train every person not just to serve food, but to create an experience — one worth sharing, one worth coming back for. And our guests agree. With a perfect 5-star rating and over 100 glowing reviews, we're proud to have made Rochester a little sweeter.</p>
-  </div>
-</div>
-
-<!-- VALUES -->
-<div class="about-values">
-  <p class="values-label">What We Stand For</p>
-  <h2 class="values-title">The Sweet Retreat <em>promise</em></h2>
-  <div class="values-grid">
-    <div class="value-card">
-      <div class="value-icon">🍓</div>
-      <div class="value-name">Always Fresh</div>
-      <div class="value-desc">Every item is made to order. We never pre-make, never cut corners — every visit is as good as the first.</div>
-    </div>
-    <div class="value-card">
-      <div class="value-icon">🤝</div>
-      <div class="value-name">Genuine Hospitality</div>
-      <div class="value-desc">We walk you through the menu, answer every question, and make sure you leave with exactly what you were craving — and then some.</div>
-    </div>
-    <div class="value-card">
-      <div class="value-icon">✨</div>
-      <div class="value-name">One of a Kind</div>
-      <div class="value-desc">There's nothing else like us in Rochester. Our menu, our space, our experience — all designed to be unforgettable.</div>
+  <!-- Row 1: Image left, text right -->
+  <div class="about-feature">
+    <img src="Screenshot%202026-04-22%20010439.png" alt="Sweet Retreat food">
+    <div class="feature-text">
+      <p class="feature-body">Sweet Retreat was born from a simple belief: Rochester deserved something extraordinary. We set out to create a space where every detail matters — from the ingredients we source to the way we welcome every guest who walks in.</p>
+      <a href="menu.html" class="feature-btn">See Our Menu</a>
     </div>
   </div>
+
+  <!-- Row 2: Text left, image right -->
+  <div class="about-feature reverse">
+    <img src="Screenshot%202026-04-22%20011017.png" alt="Sweet Retreat desserts">
+    <div class="feature-text">
+      <p class="feature-body">Every item on our menu is made fresh to order. We don't cut corners. Whether it's our Dubai Strawberry Cups, golden bubble waffles, or handcrafted artisan crepes — everything is prepared with the same love and attention every single time.</p>
+      <a href="index.html#visit" class="feature-btn">Find Us</a>
+    </div>
+  </div>
+
+  <!-- Row 3: Image left, text right -->
+  <div class="about-feature">
+    <img src="Screenshot%202026-04-22%20011217.png" alt="Sweet Retreat drinks">
+    <div class="feature-text">
+      <p class="feature-body">Our team is what makes Sweet Retreat truly special. We train every person not just to serve food, but to create an experience — one worth sharing, one worth coming back for. With a perfect 5-star rating and 100+ glowing reviews, we're proud to have made Rochester a little sweeter.</p>
+      <a href="index.html#reviews" class="feature-btn">Read Reviews</a>
+    </div>
+  </div>
+
 </div>
 
 <!-- STATS -->
