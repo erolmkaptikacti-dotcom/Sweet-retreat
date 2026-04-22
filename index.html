@@ -361,8 +361,15 @@
   @media (max-width: 900px) {
     nav { padding: 1.2rem 2rem; }
     .nav-links { display: none; }
-    .photo-lineup { grid-template-columns: 1fr; height: auto; }
-    .photo-lineup img { height: 55vw; min-height: 250px; }
+
+    /* Hero: shift focal point left on mobile */
+    .hero-bg { background-position: left center; }
+
+    /* Keep 3-photo lineup horizontal, just shorter */
+    .photo-lineup { grid-template-columns: 1fr 1fr 1fr; height: auto; }
+    .photo-lineup img { height: 32vw; min-height: 0; }
+    .lineup-caption { font-size: 0.75rem; padding-top: 0.6rem; }
+
     .showcase { grid-template-columns: 1fr; }
     .showcase-photos { padding: 0 1.5rem 2rem; }
     .showcase-main img { height: 50vw; }
@@ -370,6 +377,10 @@
     .exp-grid { grid-template-columns: 1fr 1fr; }
     .footer-top { grid-template-columns: 1fr 1fr; }
     .specialties, .reviews, .experience, .cta-banner { padding: 5rem 2rem; }
+
+    /* Reviews: stack vertically and take full width */
+    .reviews-track { flex-direction: column; }
+    .review-card { min-width: 0; width: 100%; }
   }
 </style>
 </head>
