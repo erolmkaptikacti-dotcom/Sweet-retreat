@@ -177,7 +177,8 @@
   /* ── ABOUT ── */
   .photo-lineup {
     display: grid; grid-template-columns: 1fr 1fr 1fr;
-    gap: 0; height: 65vh; min-height: 420px;
+    gap: 12px; height: 65vh; min-height: 420px;
+    background: var(--charcoal); padding: 2.5rem 3rem;
   }
   .photo-lineup img {
     width: 100%; height: 100%; object-fit: cover; display: block;
@@ -223,7 +224,7 @@
     align-items: start;
   }
   .showcase-row img:first-child {
-    width: 100%; height: 220px; object-fit: cover; display: block;
+    width: 100%; height: auto; display: block;
   }
   .showcase-row img:last-child {
     width: 100%; height: auto; display: block;
@@ -420,7 +421,7 @@
     .showcase { grid-template-columns: 1fr; }
     .showcase-photos { padding: 0 1.5rem 2rem; }
     .showcase-main img { height: 50vw; }
-    .showcase-row img:first-child { height: 35vw; }
+    .showcase-row img:first-child { height: auto; }
     .exp-grid { grid-template-columns: 1fr 1fr; }
     .footer-top { grid-template-columns: 1fr 1fr; }
     .specialties, .reviews, .experience, .cta-banner { padding: 5rem 2rem; }
