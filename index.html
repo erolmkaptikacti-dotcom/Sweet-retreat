@@ -175,46 +175,17 @@
   .strip-dot { color: rgba(255,255,255,0.5); }
 
   /* ── ABOUT ── */
-  .about {
-    display: grid; grid-template-columns: 1fr 1fr;
-    gap: 0; min-height: 80vh;
+  .photo-lineup {
+    display: grid; grid-template-columns: 1fr 1fr 1fr;
+    gap: 0; height: 65vh; min-height: 420px;
   }
-  .about-img {
-    position: relative; overflow: hidden;
-    background-image: url('Screenshot%202026-04-22%20005319.png');
-    background-size: cover; background-position: right center;
-    filter: saturate(0.7) brightness(0.8);
-  }
-  .about-img::after {
-    content: ''; position: absolute; inset: 0;
-    background: linear-gradient(to right, transparent 70%, var(--charcoal));
-  }
-  .about-text {
-    background: var(--charcoal);
-    padding: 6rem 5rem; display: flex; flex-direction: column; justify-content: center;
+  .photo-lineup img {
+    width: 100%; height: 100%; object-fit: cover; display: block;
   }
   .section-label {
     font-size: 0.7rem; letter-spacing: 0.3em; text-transform: uppercase;
     color: var(--rose); margin-bottom: 1.5rem;
   }
-  .about-title {
-    font-family: 'Josefin Serif', serif;
-    font-size: clamp(2rem, 4vw, 3rem);
-    line-height: 1.18; color: var(--cream); margin-bottom: 1.8rem;
-  }
-  .about-title em { font-style: italic; color: var(--rose); }
-  .about-body {
-    font-family: 'Lora', serif;
-    font-size: 1.2rem; line-height: 1.8;
-    color: rgba(255,255,255,0.7); margin-bottom: 2.5rem;
-  }
-  .stat-row { display: flex; gap: 3rem; margin-top: 0.5rem; }
-  .stat { display: flex; flex-direction: column; gap: 0.2rem; }
-  .stat-num {
-    font-family: 'Josefin Serif', serif;
-    font-size: 2.5rem; color: var(--rose); line-height: 1;
-  }
-  .stat-label { font-size: 0.72rem; letter-spacing: 0.15em; text-transform: uppercase; color: rgba(255,255,255,0.45); }
 
   /* ── SPECIALTIES ── */
   .specialties {
@@ -402,9 +373,8 @@
   @media (max-width: 900px) {
     nav { padding: 1.2rem 2rem; }
     .nav-links { display: none; }
-    .about { grid-template-columns: 1fr; }
-    .about-img { height: 40vh; }
-    .about-text { padding: 4rem 2.5rem; }
+    .photo-lineup { grid-template-columns: 1fr; height: auto; }
+    .photo-lineup img { height: 55vw; min-height: 250px; }
     .exp-grid { grid-template-columns: 1fr 1fr; }
     .footer-top { grid-template-columns: 1fr 1fr; }
     .specialties, .reviews, .experience, .cta-banner { padding: 5rem 2rem; }
@@ -471,30 +441,11 @@
   </div>
 </div>
 
-<!-- ABOUT -->
-<section class="about" id="about">
-  <div class="about-img"></div>
-  <div class="about-text">
-    <p class="section-label reveal">Our Story</p>
-    <h2 class="about-title reveal">Rochester's <em>most unique</em> dessert experience</h2>
-    <p class="about-body reveal">
-      There's nothing else like us in Rochester — and our guests agree. From the moment you walk in, our team welcomes you like family, walking you through every indulgent option on our menu. We believe dessert is more than a treat; it's a moment worth savoring.
-    </p>
-    <div class="stat-row reveal">
-      <div class="stat">
-        <span class="stat-num">★ 5.0</span>
-        <span class="stat-label">Google Rating</span>
-      </div>
-      <div class="stat">
-        <span class="stat-num">100+</span>
-        <span class="stat-label">Glowing Reviews</span>
-      </div>
-      <div class="stat">
-        <span class="stat-num">∞</span>
-        <span class="stat-label">Smiles Created</span>
-      </div>
-    </div>
-  </div>
+<!-- PHOTO LINEUP -->
+<section class="photo-lineup" id="about">
+  <img src="Screenshot%202026-04-22%20010439.png" alt="Sweet Retreat interior">
+  <img src="Screenshot%202026-04-22%20011017.png" alt="Sweet Retreat desserts">
+  <img src="Screenshot%202026-04-22%20011217.png" alt="Sweet Retreat experience">
 </section>
 
 <!-- SPECIALTIES -->
