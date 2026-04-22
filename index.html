@@ -236,58 +236,6 @@
     width: 100%; height: auto; display: block;
   }
 
-  /* ── SPECIALTIES ── */
-  .specialties {
-    background: var(--dark); padding: 7rem 4rem;
-    text-align: center;
-  }
-  .section-title {
-    font-family: 'Josefin Serif', serif;
-    font-size: clamp(2rem, 5vw, 3.5rem);
-    color: var(--cream); margin-bottom: 0.7rem;
-  }
-  .section-title em { font-style: italic; color: var(--rose); }
-  .section-sub {
-    font-family: 'Lora', serif;
-    font-size: 1.2rem; color: rgba(255,255,255,0.55);
-    margin-bottom: 4rem;
-  }
-
-  .cards {
-    display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
-    gap: 1.5rem; max-width: 1200px; margin: 0 auto;
-  }
-
-  .card {
-    background: var(--charcoal);
-    border: 1px solid rgba(232,160,180,0.1);
-    padding: 2.8rem 2.2rem;
-    border-radius: 4px; text-align: left;
-    transition: transform 0.35s, border-color 0.35s, box-shadow 0.35s;
-    position: relative; overflow: hidden;
-  }
-  .card::before {
-    content: ''; position: absolute; top: 0; left: 0; right: 0; height: 2px;
-    background: linear-gradient(to right, transparent, var(--rose), transparent);
-    transform: scaleX(0); transition: transform 0.4s;
-  }
-  .card:hover { transform: translateY(-6px); border-color: rgba(232,160,180,0.3); box-shadow: 0 20px 60px rgba(196,96,122,0.12); }
-  .card:hover::before { transform: scaleX(1); }
-
-  .card-icon { font-size: 2.2rem; margin-bottom: 1.2rem; }
-  .card-name {
-    font-family: 'Josefin Serif', serif;
-    font-size: 1.4rem; color: var(--cream);
-    margin-bottom: 0.7rem;
-  }
-  .card-desc { font-size: 0.9rem; line-height: 1.7; color: rgba(255,255,255,0.55); }
-  .card-tag {
-    display: inline-block; margin-top: 1.2rem;
-    font-size: 0.65rem; letter-spacing: 0.18em; text-transform: uppercase;
-    color: var(--rose); border: 1px solid rgba(232,160,180,0.35);
-    padding: 0.3rem 0.8rem; border-radius: 1px;
-  }
-
   /* ── REVIEWS ── */
   .reviews {
     background: var(--charcoal);
@@ -441,7 +389,7 @@
   <a href="#" class="nav-logo">Sweet <span>Retreat</span></a>
   <ul class="nav-links">
     <li><a href="#about">Our Story</a></li>
-    <li><a href="#menu">Menu</a></li>
+    <li><a href="menu.html">Menu</a></li>
     <li><a href="#reviews">Reviews</a></li>
     <li><a href="#visit">Visit</a></li>
   </ul>
@@ -457,7 +405,7 @@
     <h1 class="hero-title">Sweet<br><em>Retreat</em></h1>
     <p class="hero-sub">Handcrafted desserts. Unforgettable moments. A place unlike anything else.</p>
     <div class="hero-actions">
-      <a href="#menu" class="btn-primary">Explore the Menu</a>
+      <a href="menu.html" class="btn-primary">Explore the Menu</a>
       <a href="#reviews" class="btn-ghost">Read Reviews</a>
     </div>
   </div>
@@ -515,7 +463,7 @@
   <div class="showcase-text">
     <p class="section-label">Our Retreat</p>
     <h2 class="showcase-title">A place worth <em>savoring,</em><br>every visit</h2>
-    <a href="#menu" class="showcase-btn">Explore the Menu</a>
+    <a href="menu.html" class="showcase-btn">Explore the Menu</a>
   </div>
   <div class="showcase-photos">
     <div class="showcase-main">
@@ -528,53 +476,6 @@
   </div>
 </section>
 
-<!-- SPECIALTIES -->
-<section class="specialties" id="menu">
-  <p class="section-label reveal">The Menu</p>
-  <h2 class="section-title reveal">Crafted with <em>love</em></h2>
-  <p class="section-sub reveal">Every item made fresh. Every visit, something new to discover.</p>
-
-  <div class="cards">
-    <div class="card reveal">
-      <div class="card-icon">🍓</div>
-      <h3 class="card-name">Dubai Strawberry Cup</h3>
-      <p class="card-desc">The dessert that started it all. Lush strawberries, pistachio-laden Dubai chocolate, and generous portions that keep guests coming back twice a day.</p>
-      <span class="card-tag">Fan Favorite</span>
-    </div>
-    <div class="card reveal">
-      <div class="card-icon">🧇</div>
-      <h3 class="card-name">Bubble Waffles</h3>
-      <p class="card-desc">Impossibly soft, golden, and made fresh to order. Our bubble waffles are crispy on the outside and cloud-like within. An experience as much as a dessert.</p>
-      <span class="card-tag">A Must-Try</span>
-    </div>
-    <div class="card reveal">
-      <div class="card-icon">🫔</div>
-      <h3 class="card-name">Artisan Crepes</h3>
-      <p class="card-desc">From S'mores to Oreo and beyond — our hand-made crepes are filled with inspired combinations and served in a timeframe that actually impresses.</p>
-      <span class="card-tag">House Specialty</span>
-    </div>
-    <div class="card reveal">
-      <div class="card-icon">🍫</div>
-      <h3 class="card-name">Dubai Chocolate</h3>
-      <p class="card-icon">🍫</h3>
-      <h3 class="card-name">Dubai Chocolate</h3>
-      <p class="card-desc">Rich pistachio cream meets silky chocolate in the treat that's taken the world by storm. Ours is the best you'll find — our guests wouldn't have it any other way.</p>
-      <span class="card-tag">Trending Now</span>
-    </div>
-    <div class="card reveal">
-      <div class="card-icon">🥤</div>
-      <h3 class="card-name">Real Hershey Shakes</h3>
-      <p class="card-desc">Thick, creamy, made with real Hershey's ice cream. The chocolate shake alone is worth the trip. Try the watermelon mint refresher for something extraordinary.</p>
-      <span class="card-tag">Crowd Pleaser</span>
-    </div>
-    <div class="card reveal">
-      <div class="card-icon">🍰</div>
-      <h3 class="card-name">Cakes & Cheesecakes</h3>
-      <p class="card-desc">Fudge cake that's gloriously rich. Cheesecake that's perfectly balanced. Lemon raspberry that sings. On display and made to impress every single time.</p>
-      <span class="card-tag">Display Case Star</span>
-    </div>
-  </div>
-</section>
 
 <!-- REVIEWS -->
 <section class="reviews" id="reviews">
