@@ -55,40 +55,10 @@
   .nav-cta:hover { background: var(--rose); }
 
   /* ── HERO ── */
-  .about-hero {
-    position: relative; height: 75vh; min-height: 520px;
-    display: flex; align-items: center; justify-content: center;
-    overflow: hidden;
-  }
-  .about-hero-bg {
-    position: absolute; inset: 0;
-    background-image: url('Screenshot%202026-04-22%20020433.png');
-    background-size: cover; background-position: center 70%;
-    filter: brightness(0.45) saturate(0.8);
-  }
-  .about-hero-overlay {
-    position: absolute; inset: 0;
-    background: linear-gradient(160deg, rgba(10,5,8,0.6) 0%, rgba(26,16,21,0.4) 50%, rgba(10,5,8,0.75) 100%);
-  }
-  .about-hero-content {
-    position: relative; z-index: 2;
-    text-align: center; padding: 0 2rem;
-  }
-  .about-eyebrow {
-    font-size: 0.72rem; letter-spacing: 0.3em; text-transform: uppercase;
-    color: var(--rose); margin-bottom: 1.4rem;
-  }
-  .about-hero-title {
-    font-family: 'Josefin Serif', serif;
-    font-size: clamp(3rem, 8vw, 6.5rem);
-    color: var(--cream); line-height: 1.02;
-  }
-  .about-hero-title em { color: var(--rose); font-style: italic; }
-
   /* ── INTRO SECTION ── */
   .about-intro {
     max-width: 780px; margin: 0 auto;
-    padding: 6rem 4rem;
+    padding: 10rem 4rem 5rem;
     text-align: center;
   }
   .about-intro-label {
@@ -224,16 +194,6 @@
   </ul>
   <a href="index.html#visit" class="nav-cta">Find Us</a>
 </nav>
-
-<!-- HERO -->
-<section class="about-hero">
-  <div class="about-hero-bg"></div>
-  <div class="about-hero-overlay"></div>
-  <div class="about-hero-content">
-    <p class="about-eyebrow">Rochester, New York</p>
-    <h1 class="about-hero-title">About <em>Us</em></h1>
-  </div>
-</section>
 
 <!-- INTRO -->
 <div class="about-intro">
