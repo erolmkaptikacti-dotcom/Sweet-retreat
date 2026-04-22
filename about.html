@@ -1,0 +1,352 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>About Us — Sweet Retreat</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Josefin+Serif:ital,wght@0,400;0,700;1,400&family=Lora:ital,wght@0,300;0,400;1,300&family=Raleway:wght@300;400;500;600&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --rose: #e8a0b4;
+    --deep-rose: #c4607a;
+    --blush: #f5d0dc;
+    --cream: #fdf6f0;
+    --dark: #1a1015;
+    --charcoal: #2d2028;
+  }
+
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+  html { scroll-behavior: smooth; }
+
+  body {
+    font-family: 'Raleway', sans-serif;
+    background: var(--dark);
+    color: var(--cream);
+    overflow-x: hidden;
+  }
+
+  /* ── NAV ── */
+  nav {
+    position: fixed; top: 0; left: 0; right: 0; z-index: 100;
+    display: flex; align-items: center; justify-content: space-between;
+    padding: 1.4rem 4rem;
+    background: rgba(26,16,21,0.97);
+    backdrop-filter: blur(2px);
+  }
+  .nav-logo {
+    font-family: 'Josefin Serif', serif;
+    font-size: 1.6rem; letter-spacing: 0.02em;
+    color: var(--cream); text-decoration: none;
+  }
+  .nav-logo span { color: var(--rose); font-style: italic; }
+  .nav-links { display: flex; gap: 2.5rem; list-style: none; }
+  .nav-links a {
+    font-size: 0.82rem; letter-spacing: 0.12em; text-transform: uppercase;
+    color: rgba(255,255,255,0.75); text-decoration: none; transition: color 0.3s;
+  }
+  .nav-links a:hover, .nav-links a.active { color: var(--rose); }
+  .nav-cta {
+    background: var(--deep-rose); color: white;
+    padding: 0.65rem 1.6rem; border-radius: 2px;
+    font-size: 0.78rem; letter-spacing: 0.12em; text-transform: uppercase;
+    text-decoration: none; transition: background 0.3s;
+  }
+  .nav-cta:hover { background: var(--rose); }
+
+  /* ── HERO ── */
+  .about-hero {
+    position: relative; height: 75vh; min-height: 520px;
+    display: flex; align-items: center; justify-content: center;
+    overflow: hidden;
+  }
+  .about-hero-bg {
+    position: absolute; inset: 0;
+    background-image: url('Screenshot%202026-04-22%20020433.png');
+    background-size: cover; background-position: center;
+    filter: brightness(0.45) saturate(0.8);
+  }
+  .about-hero-overlay {
+    position: absolute; inset: 0;
+    background: linear-gradient(160deg, rgba(10,5,8,0.6) 0%, rgba(26,16,21,0.4) 50%, rgba(10,5,8,0.75) 100%);
+  }
+  .about-hero-content {
+    position: relative; z-index: 2;
+    text-align: center; padding: 0 2rem;
+  }
+  .about-eyebrow {
+    font-size: 0.72rem; letter-spacing: 0.3em; text-transform: uppercase;
+    color: var(--rose); margin-bottom: 1.4rem;
+  }
+  .about-hero-title {
+    font-family: 'Josefin Serif', serif;
+    font-size: clamp(3rem, 8vw, 6.5rem);
+    color: var(--cream); line-height: 1.02;
+  }
+  .about-hero-title em { color: var(--rose); font-style: italic; }
+
+  /* ── INTRO SECTION ── */
+  .about-intro {
+    max-width: 780px; margin: 0 auto;
+    padding: 6rem 4rem;
+    text-align: center;
+  }
+  .about-intro-label {
+    font-size: 0.7rem; letter-spacing: 0.3em; text-transform: uppercase;
+    color: var(--rose); margin-bottom: 1.5rem;
+  }
+  .about-intro-title {
+    font-family: 'Josefin Serif', serif;
+    font-size: clamp(1.8rem, 4vw, 2.8rem);
+    color: var(--cream); line-height: 1.2; margin-bottom: 2rem;
+  }
+  .about-intro-title em { font-style: italic; color: var(--rose); }
+  .about-intro-body {
+    font-family: 'Lora', serif;
+    font-size: 1.15rem; line-height: 1.9;
+    color: rgba(255,255,255,0.65);
+  }
+
+  /* ── DIVIDER ── */
+  .rose-divider {
+    width: 60px; height: 1px;
+    background: var(--rose); margin: 0 auto 3rem;
+  }
+
+  /* ── PHOTO STRIP ── */
+  .about-photo-strip {
+    display: grid; grid-template-columns: 1fr 1fr 1fr;
+    gap: 3px;
+  }
+  .about-photo-strip img {
+    width: 100%; height: 380px; object-fit: cover; display: block;
+    filter: saturate(0.85);
+    transition: filter 0.4s;
+  }
+  .about-photo-strip img:hover { filter: saturate(1.1); }
+
+  /* ── VALUES ── */
+  .about-values {
+    background: var(--charcoal);
+    padding: 7rem 4rem;
+    text-align: center;
+  }
+  .values-label {
+    font-size: 0.7rem; letter-spacing: 0.3em; text-transform: uppercase;
+    color: var(--rose); margin-bottom: 1rem;
+  }
+  .values-title {
+    font-family: 'Josefin Serif', serif;
+    font-size: clamp(1.8rem, 4vw, 2.8rem);
+    color: var(--cream); margin-bottom: 4rem;
+  }
+  .values-title em { font-style: italic; color: var(--rose); }
+  .values-grid {
+    display: grid; grid-template-columns: repeat(3, 1fr);
+    gap: 2.5rem; max-width: 1000px; margin: 0 auto;
+  }
+  .value-card {
+    padding: 2.5rem 2rem;
+    border: 1px solid rgba(232,160,180,0.15);
+    border-radius: 4px;
+    text-align: left;
+  }
+  .value-icon {
+    font-size: 1.8rem; margin-bottom: 1.2rem;
+  }
+  .value-name {
+    font-family: 'Josefin Serif', serif;
+    font-size: 1.15rem; color: var(--cream);
+    margin-bottom: 0.7rem;
+  }
+  .value-desc {
+    font-size: 0.88rem; line-height: 1.7;
+    color: rgba(255,255,255,0.5);
+  }
+
+  /* ── STORY SECTION ── */
+  .about-story {
+    max-width: 780px; margin: 0 auto;
+    padding: 7rem 4rem;
+  }
+  .story-label {
+    font-size: 0.7rem; letter-spacing: 0.3em; text-transform: uppercase;
+    color: var(--rose); margin-bottom: 1.5rem;
+  }
+  .story-title {
+    font-family: 'Josefin Serif', serif;
+    font-size: clamp(1.8rem, 4vw, 2.8rem);
+    color: var(--cream); line-height: 1.2; margin-bottom: 2rem;
+  }
+  .story-title em { font-style: italic; color: var(--rose); }
+  .story-body {
+    font-family: 'Lora', serif;
+    font-size: 1.1rem; line-height: 1.95;
+    color: rgba(255,255,255,0.65);
+  }
+  .story-body p + p { margin-top: 1.5rem; }
+
+  /* ── STATS ── */
+  .about-stats {
+    background: var(--deep-rose);
+    padding: 5rem 4rem;
+    display: flex; justify-content: center; gap: 6rem;
+    text-align: center; flex-wrap: wrap;
+  }
+  .stat-num {
+    font-family: 'Josefin Serif', serif;
+    font-size: 3rem; color: #fff; line-height: 1;
+    margin-bottom: 0.4rem;
+  }
+  .stat-label {
+    font-size: 0.72rem; letter-spacing: 0.18em; text-transform: uppercase;
+    color: rgba(255,255,255,0.75);
+  }
+
+  /* ── CTA ── */
+  .about-cta {
+    padding: 7rem 4rem; text-align: center;
+    background: var(--dark);
+  }
+  .about-cta-title {
+    font-family: 'Josefin Serif', serif;
+    font-size: clamp(2rem, 5vw, 3.5rem);
+    color: var(--cream); margin-bottom: 0.8rem;
+  }
+  .about-cta-title em { font-style: italic; color: var(--rose); }
+  .about-cta-sub {
+    font-family: 'Lora', serif;
+    font-size: 1.1rem; color: rgba(255,255,255,0.55);
+    margin-bottom: 2.5rem;
+  }
+  .btn-primary {
+    display: inline-block; background: var(--deep-rose); color: white;
+    padding: 1rem 2.5rem; border-radius: 2px;
+    font-size: 0.8rem; letter-spacing: 0.14em; text-transform: uppercase;
+    text-decoration: none; transition: background 0.3s, transform 0.2s;
+    margin: 0 0.5rem;
+  }
+  .btn-primary:hover { background: var(--rose); transform: translateY(-2px); }
+  .btn-ghost {
+    display: inline-block;
+    border: 1px solid rgba(255,255,255,0.35); color: var(--cream);
+    padding: 1rem 2.5rem; border-radius: 2px;
+    font-size: 0.8rem; letter-spacing: 0.14em; text-transform: uppercase;
+    text-decoration: none; transition: border-color 0.3s;
+    margin: 0 0.5rem;
+  }
+  .btn-ghost:hover { border-color: var(--rose); color: var(--rose); }
+
+  @media (max-width: 900px) {
+    nav { padding: 1.2rem 2rem; }
+    .nav-links { display: none; }
+    .about-intro, .about-story { padding: 4rem 1.5rem; }
+    .about-photo-strip { grid-template-columns: 1fr; }
+    .about-photo-strip img { height: 60vw; }
+    .values-grid { grid-template-columns: 1fr; }
+    .about-values { padding: 5rem 2rem; }
+    .about-stats { gap: 3rem; padding: 4rem 2rem; }
+    .about-cta { padding: 5rem 2rem; }
+  }
+</style>
+</head>
+<body>
+
+<nav>
+  <a href="index.html" class="nav-logo">Sweet <span>Retreat</span></a>
+  <ul class="nav-links">
+    <li><a href="about.html" class="active">About Us</a></li>
+    <li><a href="menu.html">Menu</a></li>
+    <li><a href="index.html#reviews">Reviews</a></li>
+    <li><a href="index.html#visit">Visit</a></li>
+  </ul>
+  <a href="index.html#visit" class="nav-cta">Find Us</a>
+</nav>
+
+<!-- HERO -->
+<section class="about-hero">
+  <div class="about-hero-bg"></div>
+  <div class="about-hero-overlay"></div>
+  <div class="about-hero-content">
+    <p class="about-eyebrow">Rochester, New York</p>
+    <h1 class="about-hero-title">About <em>Us</em></h1>
+  </div>
+</section>
+
+<!-- INTRO -->
+<div class="about-intro">
+  <p class="about-intro-label">Who We Are</p>
+  <div class="rose-divider"></div>
+  <h2 class="about-intro-title">Rochester's most <em>unique</em> dessert experience</h2>
+  <p class="about-intro-body">
+    Sweet Retreat isn't just a dessert shop — it's a destination. From the moment you walk through our doors, you're greeted like family, guided through a menu built to impress, and treated to desserts that genuinely can't be found anywhere else in Rochester.
+  </p>
+</div>
+
+<!-- PHOTO STRIP -->
+<div class="about-photo-strip">
+  <img src="Screenshot%202026-04-22%20010439.png" alt="Sweet Retreat food">
+  <img src="Screenshot%202026-04-22%20011017.png" alt="Sweet Retreat desserts">
+  <img src="Screenshot%202026-04-22%20011217.png" alt="Sweet Retreat drinks">
+</div>
+
+<!-- STORY -->
+<div class="about-story">
+  <p class="story-label">Our Story</p>
+  <h2 class="story-title">Built on passion, <em>crafted</em> with care</h2>
+  <div class="story-body">
+    <p>Sweet Retreat was born from a simple belief: Rochester deserved something extraordinary. We set out to create a space where every detail matters — from the ingredients we source to the way we welcome every guest who walks in.</p>
+    <p>Every item on our menu is made fresh to order. We don't cut corners. Whether it's our Dubai Strawberry Cups piled high with fresh fruit and pistachio kunafa, our golden bubble waffles, or our handcrafted artisan crepes, everything is prepared with the same love and attention every single time.</p>
+    <p>Our team is what makes Sweet Retreat truly special. We train every person not just to serve food, but to create an experience — one worth sharing, one worth coming back for. And our guests agree. With a perfect 5-star rating and over 100 glowing reviews, we're proud to have made Rochester a little sweeter.</p>
+  </div>
+</div>
+
+<!-- VALUES -->
+<div class="about-values">
+  <p class="values-label">What We Stand For</p>
+  <h2 class="values-title">The Sweet Retreat <em>promise</em></h2>
+  <div class="values-grid">
+    <div class="value-card">
+      <div class="value-icon">🍓</div>
+      <div class="value-name">Always Fresh</div>
+      <div class="value-desc">Every item is made to order. We never pre-make, never cut corners — every visit is as good as the first.</div>
+    </div>
+    <div class="value-card">
+      <div class="value-icon">🤝</div>
+      <div class="value-name">Genuine Hospitality</div>
+      <div class="value-desc">We walk you through the menu, answer every question, and make sure you leave with exactly what you were craving — and then some.</div>
+    </div>
+    <div class="value-card">
+      <div class="value-icon">✨</div>
+      <div class="value-name">One of a Kind</div>
+      <div class="value-desc">There's nothing else like us in Rochester. Our menu, our space, our experience — all designed to be unforgettable.</div>
+    </div>
+  </div>
+</div>
+
+<!-- STATS -->
+<div class="about-stats">
+  <div>
+    <div class="stat-num">★ 5.0</div>
+    <div class="stat-label">Google Rating</div>
+  </div>
+  <div>
+    <div class="stat-num">100+</div>
+    <div class="stat-label">Glowing Reviews</div>
+  </div>
+  <div>
+    <div class="stat-num">∞</div>
+    <div class="stat-label">Smiles Created</div>
+  </div>
+</div>
+
+<!-- CTA -->
+<div class="about-cta">
+  <h2 class="about-cta-title">Come experience it <em>yourself</em></h2>
+  <p class="about-cta-sub">No reservation needed. Just walk in and let us take care of the rest.</p>
+  <a href="index.html#visit" class="btn-primary">Find Us</a>
+  <a href="menu.html" class="btn-ghost">See the Menu</a>
+</div>
+
+</body>
+</html>
